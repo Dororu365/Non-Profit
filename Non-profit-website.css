@@ -20,13 +20,14 @@ table {
     float:left;
 }
 .sidenav {
-    width: 10%;
+    width: 8%;
     height: 100%;
-    position:fixed;
+    position:absolute;
     margin-top: 73px;
     background-color: #ffffff;
     overflow-x: hidden;
     padding-top: 20px;
+    padding-left: 0px;
     border: 1px solid #f2f6f9 ; 
     background-color: rgb(255, 255, 255);
 }
@@ -36,7 +37,18 @@ table {
     font-size: 25px;
     color: #818181;
     display: block;
+    position: relative;
   }
-  .sidenav a:hover {
-    color: #000000;
+  .sidenav a::after {
+    content: "";
+    background: black;
+    height: 4px;
+    width: 100%;
+    position:absolute;
+    bottom: 0;
+    left: 0;
+    transition: 100ms;
+}
+.sidenav a:hover::after {
+    width: 0;
 }
